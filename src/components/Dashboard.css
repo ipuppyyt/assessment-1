@@ -1,4 +1,10 @@
+.grid{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
 .card{
-    width: 150px;
+    width: 250px;
     margin: 20px;
 }
