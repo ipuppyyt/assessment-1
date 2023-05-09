@@ -3,7 +3,6 @@ import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddBlogs from './components/AddBlogs';
-//import { Avatar } from '@mui/material';
 
 function App() {
   return (

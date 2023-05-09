@@ -13,6 +13,16 @@ const Dashboard = () => {
     });
   }, []);
 
+
+  function  randomInteger(min, max)  {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function avatarimg(){
+  var avatarurl = "https://randomuser.me/api/portraits/men/"+randomInteger(1,85)+".jpg";
+  return avatarurl;
+  }
+
+
   return (
     <div className="maindiv">
       <Grid container spacing={2} className="maingrid">
@@ -21,13 +31,13 @@ const Dashboard = () => {
             <Card className="card" variant="outlined">
               <CardContent className="textalign">
                 <Stack direction="row" spacing={2}>
-                  <Avatar alt="Remy Sharp" className="avatar" sx={{ width: 56, height: 56 }}/>
+                  <Avatar alt="Remy Sharp" src={avatarimg()} className="avatar" sx={{ width: 56, height: 56 }} />
                 </Stack><br></br>
                 <Typography>
-                  <b className="typo">{val.title}</b> 
+                  <b className="typo">{val.id}</b> 
                 </Typography>
                 <Typography>
-                  {val.body}
+                  {val.title}
                 </Typography>
               </CardContent>
               <CardActions>
