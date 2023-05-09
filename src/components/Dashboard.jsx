@@ -1,18 +1,10 @@
 import './Dashboard.css';
-import {
-    Avatar,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Stack,
-  Typography,
-} from "@mui/material";
+import {Avatar,Button,Card,CardActions,CardContent,Grid,Stack,Typography} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Dashboard = () => {
+  
   var [value, setValue] = useState([]);
   useEffect(() => {
     axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
@@ -20,11 +12,12 @@ const Dashboard = () => {
       setValue((value = response.data));
     });
   }, []);
+
   return (
     <div className="maindiv">
       <Grid container spacing={2} className="maingrid">
         {value.map((val) => (
-          <Grid item xs="auto" className="grid">
+          <Grid item xs="auto" className="grid card">
             <Card className="card" variant="outlined">
               <CardContent className="textalign">
                 <Stack direction="row" spacing={2}>
@@ -38,7 +31,7 @@ const Dashboard = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" className="button">More Info {">>"}</Button>
+                <Button size="small" className="button" variant='contained'>More Info {">>"}</Button>
               </CardActions><br></br>
             </Card>
           </Grid>
